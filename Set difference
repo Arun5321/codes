@@ -1,0 +1,163 @@
+/*************** Program for Set Difference   *************/
+
+/****** Author: Ayush Prasad, 2019B101134  **********/
+
+/***********************************************/
+
+#include <iostream>
+
+using namespace std;
+
+void ab(int a[5],int b[6],int m,int n)
+
+{
+
+  int i=0,j=0,k=0,x=0;
+
+  int c[m+n];
+
+  while(i<=m && j<=n)
+
+{ if(a[i]==b[j])
+
+{
+
+  j++;
+
+  i++;
+
+}
+
+else 
+
+ {  if (a[i]<b[j])
+
+   {
+
+    c[k]=a[i];
+
+    i++;k++;x++;
+
+   }
+
+  else if(a[i]>b[j])
+
+  {
+
+    j++;
+
+  }
+
+}
+
+}
+
+  while(i<=m)
+
+  {
+
+    c[k]=a[i];
+
+    i++;
+
+    k++;x++;
+
+  }
+
+  cout<<"A-B"<<endl;
+
+for(int z=0;z<x-1;z++)
+
+{
+
+  cout<<c[z]<<" ";
+
+}
+
+cout<<endl;
+
+}
+
+/***********************************************/
+
+void ba(int a[5],int b[6],int m,int n)
+
+{
+
+  int i=0,j=0,k=0,x=0;
+
+  int c[m+n];
+
+  while(i<=m && j<=n)
+
+{ if(a[i]==b[j])
+
+{
+
+  j++;
+
+  i++;
+
+}
+
+else 
+
+ {  if (a[i]<b[j])
+
+   {
+
+    i++;
+
+   }
+
+  else if(a[i]>b[j])
+
+  { c[k]=b[j];
+
+    k++;x++;
+
+    j++;
+
+  }
+
+}
+
+}
+
+  while(j<=n)
+
+  {
+
+    c[k]=b[j];
+
+    k++;x++;
+
+    j++;
+
+  }
+
+  cout<<"B-A"<<endl;
+
+for(int z=0;z<x-1;z++)
+
+{
+
+  cout<<c[z]<<" ";
+
+}
+
+}
+
+int main()
+
+{ int a[5]={10,20,30,40,50},b[6]={5,10,20,35,36,37};
+
+    int m=5,n=6;
+
+    ab(a,b,5,6);
+
+    ba(a,b,5,6);
+
+}
+
+/***********************************************/
